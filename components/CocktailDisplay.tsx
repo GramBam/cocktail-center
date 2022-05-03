@@ -1,33 +1,17 @@
 import Image from 'next/image';
 import styles from '../styles/Cocktail.module.scss'
 import Link from 'next/link'
+import { CocktailProps } from '../pages/cocktail/[id]';
 
-interface CocktailDisplayProps {
-  data: {
-    name: string;
-    id: number;
-    img: string;
-    ingredients: { name: string, amount: string }[] | { name: string, amount: null }[];
-    instructions: string;
-    serveIn: string
-  }
-}
+function CocktailDisplay({ name, img, id }: CocktailProps) {
 
-function CocktailDisplay({ data }: any) {
-
-  const { name, id, img, ingredients, instructions, serveIn } = data
-
-  const handleClick = () => {
-    console.log(data);
-
-  }
 
   return (
     <Link href='/cocktail/[id]' as={`/cocktail/${id}`}>
-      <div className={styles.displayContainer} onClick={handleClick}>
+      <div className={styles.displayContainer}>
         <h1 className={styles.name}>{name}</h1>
         <div className={styles.imageWrapper}>
-          <Image src={img} height='200px' width='200px' alt={name} />
+          <Image src={img} height='200px' width='200px' alt={name} loading='lazy' />
         </div>
       </div>
     </Link>
