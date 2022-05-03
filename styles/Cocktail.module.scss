@@ -22,8 +22,6 @@ $border-color2: #118ab2;
   align-items: center;
   display: flex;
   flex-direction: column;
-  border: 4px solid $border-color;
-  border-radius: 10px;
   padding: 20px;
   margin: 25px;
   cursor: pointer;
@@ -35,7 +33,7 @@ $border-color2: #118ab2;
 }
 
 .imageWrapper {
-  border: 5px solid $border-color;
+  border: 5px solid $border-color2;
   height: 200px;
   width: 200px;
 }
@@ -56,7 +54,7 @@ $border-color2: #118ab2;
 .itemInstructions {
   color: $title-color2;
   font-size: 22px;
-  width: 80vw;
+  width: 50vw;
   text-align: center;
 }
 
@@ -128,6 +126,10 @@ $border-color2: #118ab2;
 
   .ingredients {
     flex-basis: 100%;
+  }
+
+  .itemInstructions {
+    width: 80vw;
   }
 }
 

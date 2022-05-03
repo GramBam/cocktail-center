@@ -5,7 +5,6 @@ import { CocktailProps } from '../pages/cocktail/[id]';
 
 function CocktailDisplay({ name, img, id }: CocktailProps) {
 
-
   return (
     <Link href='/cocktail/[id]' as={`/cocktail/${id}`}>
       <div className={styles.displayContainer}>
