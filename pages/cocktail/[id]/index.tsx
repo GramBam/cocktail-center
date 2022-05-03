@@ -24,7 +24,12 @@ const Cocktail = ({ name, id, img, ingredients, instructions, serveIn }: Cocktai
 
         <Link href='/'><h1 className={styles.enabled}>Home</h1></Link>
 
-        <Link href='/cocktail/[id]' as={`/cocktail/${id + 1}`}><h1 className={styles.enabled}>Next</h1></Link>
+        {id < 442
+          ? <Link href='/cocktail/[id]' as={`/cocktail/${id + 1}`}><h1 className={styles.enabled}>Next</h1></Link>
+          : <h1 className={styles.disabled}>Next</h1>
+        }
+
+
       </div>
       <h1 className={styles.itemTitle}>{name}</h1>
       <p className={styles.servedIn}>Served in a {serveIn}</p>
